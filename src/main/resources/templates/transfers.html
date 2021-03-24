@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+
+
+<body>
+<nav class="navbar navbar-inverse">
+    <th:block th:include="~{/fragments/nav}"></th:block>
+</nav>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for route.." title="Type in a route">
+<h1  style="text-align: center">Transfers</h1>
+<br>
+<p style="width: 70%; margin: auto">Rent&Sale Car organizes individual transport services and transfers from all airports, hotels and resorts in Bulgaria. Our professional drivers will meet you, take care of your luggage, and you will travel comfortably and safely. Make your trip unique with our rental car.</p>
+<table id="myTable">
+    <caption>Transfers</caption>
+    <tr  >
+        <th >Route</th>
+        <th>Car (5+1 seats)</th>
+        <th>Minivan (6+1 seats)</th>
+        <th>Minibus (8+1 seats)</th>
+    </tr>
+    <tr th:each="t : ${transfers}" th:object="${t}">
+        <td th:text="*{route} "></td>
+        <td th:text="|*{carWith5seats} €|"></td>
+        <td th:text="|*{minivanWith7seats} €|"></td>
+        <td th:text="|*{minibusWith9seats} €|"></td>
+
+    </tr>
+</table>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+
+</body>

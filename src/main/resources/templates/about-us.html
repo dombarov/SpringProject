@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+<style>
+    input[type=text], select, textarea {
+        width: 100%; /* Full width */
+        padding: 12px; /* Some padding */
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 4px; /* Rounded borders */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; /* Add a top margin */
+        margin-bottom: 16px; /* Bottom margin */
+        resize: vertical;
+        background-color: #413f3f;
+    }
+
+    /* Style the submit button with a specific background color etc */
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* When moving the mouse over the submit button, add a darker green color */
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+
+    /* Add a background color and some padding around the form */
+    .container {
+        border-radius: 5px;
+
+        padding: 20px;
+        margin: 40px;
+        width: 500px;
+        position: absolute;
+        right: 0;
+        color: white;
+        background-color: #111111;
+        border: transparent;
+
+    }
+
+
+    body {
+        background-image: url('/images/cool6jpg.jpg');
+    }
+
+
+
+</style>
+<body>
+<nav class="navbar navbar-inverse">
+    <th:block th:include="~{/fragments/nav}">F</th:block>
+</nav>
+
+<div class="container">
+
+        <div class="col">
+            <div>
+                <h1 style="color: white; text-align: center">Contact us</h1>
+            </div>
+            <form th:action="@{/contact/view}" method="POST" th:object="${contactBindingModel}">
+
+                <label for="firstName">First Name</label>
+                <input th:field="*{firstName}" type="text" id="firstName" name="firstName" placeholder="Your name..">
+
+                <label for="LastName">Last Name</label>
+                <input th:field="*{lastName}" type="text" id="LastName" name="LastName" placeholder="Your last name..">
+
+                <label for="phoneNumber">Phone</label>
+                <input th:field="*{phoneNumber}" type="text" id="phoneNumber" name="phoneNumber"
+                       placeholder="Your phone number..">
+
+                <label for="cities">City</label>
+                <select id="cities" name="cities">
+                    <option value=""></option>
+                    <option th:each="c : ${T(project.models.entity.enums.CityNameEnum).values()}"
+                            th:text="${c}" th:value="${c}"></option>
+                    <!--            <option value="canada">Canada</option>-->
+                    <!--            <option value="usa">USA</option>-->
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+
+
+    </div>
+
+<br>
+<div class="col-md-4 wpb_column column_container" style="color: white">
+    <h3>Email</h3>
+    <span >rent&salecar@mail.mail</span>
+    <h3>Phone</h3>
+    <span ><a href="tel:+359893620207">+359 893 62 02 07</a></span>
+    <h3>Adress</h3>
+    <address>Rent&SaleCar<br>
+        <span >Mladost 1a</span><br>
+        <span >Sofia</span> <span >1000</span>, Bulgaria
+    </address>
+    <h3>Work time</h3>
+    <span>Monday - Friday: 09:00 - 18:00</span>
+    <br>
+    <span>Saturday - Sunday: 10:00 - 16:00</span>
+</div>
+
+<!--<div class="row">-->
+<!--    <div class="col ">-->
+<!--        София Рент А Кар е една от водещите компании, отдаващи автомобили под наем София на ниски цени.-->
+<!--        Компанията ни притежава дългогодишен опит в тази сфера и перфектно подбран автопарк,-->
+<!--        така че да може да отговори на нуждите на всички свои клиенти, включително и най-взискателните.-->
+<!--        Основната концепция на нашите Rent a Car услуги е максимално удобство и удовлетворение на всички категории-->
+<!--        клиенти.-->
+<!--        Ние ви предлагаме не просто мобилност, а свобода и независимост, от които се нуждаете.-->
+<!--    </div>-->
+
+
+<!--</div>-->
+
+
+
+<th:block th:include="~{/fragments/footer}"></th:block>
+</body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+
+<style>
+    body{
+        background-image: url('/images/cool9.jpg');
+    }
+</style>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <th:block th:include="~{/fragments/nav}"></th:block>
+    </nav>
+
+<form  th:action="@{/users/login}"  method="POST" id="login">
+    <div class="container" style="padding: 20px; width: 30%; border: none; font-weight: bold">
+        <h1 style="color: white" >Login</h1>
+        <p style="color: white">Please fill in this form to enter an account.</p>
+        <hr>
+
+        <label for="username" style="color: white"><b>Username</b></label>
+        <input  class="form-control" type="text" placeholder="Enter Username" name="username"   id="username"  >
+
+        <label for="password" style="color: white"><b>Password</b></label>
+        <input  type="password" class="form-control" placeholder="Enter Password" name="password"  id="password"  >
+
+        <small th:if="${error}" class="text-danger" style="font-weight: bolder">Incorrect username or password!</small>
+
+        <hr>
+        <button type="submit" class="registerbtn">Login</button>
+    </div>
+</form>
+
+    <th:block th:include="~{/fragments/footer}"></th:block>
+
+</body>
+</html>

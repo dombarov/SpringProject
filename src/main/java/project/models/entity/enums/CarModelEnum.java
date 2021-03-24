@@ -1,0 +1,6 @@
+package project.models.entity.enums;
+
+public enum CarModelEnum {
+    HONDA_ACCORD, TOYOTA_COROLLA, FORD_FIESTA, MERCEDES_BENZ, AUDI_A8, VW_PHAETON, OPEL_ZAFIRA, TOYOTA_VERSO, VOLVO_XC_60, VW_TOURAN;
+
+}

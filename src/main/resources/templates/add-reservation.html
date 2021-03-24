@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Project Rent a Car</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+    body{
+        background-image: url('/images/cool2.jpg');
+    }
+</style>
+
+<body >
+    <nav class="navbar navbar-inverse">
+        <th:block th:include="~{/fragments/nav}"></th:block>
+    </nav>
+
+
+
+<main class="p-5 bg-blur text-center my-main">
+
+    <h1 class="text-light border-bottom">Reserve car</h1>
+
+    <div class="d-flex justify-content-center">
+        <form th:action="@{/reservation/add}" method="POST" th:object="${reservationAddBindingModel}"
+              class="text-light">
+            <div class="form-row m-5">
+                <div class="col">
+                    <label for="pickUpdate">Pick-up Date</label>
+                    <input th:field="*{pickUpdate}" th:errorclass="bg-danger" name="pickUpdate" id="pickUpdate" type="date" class="form-control" placeholder="Pick-up date">
+                    <small th:each="e : ${#fields.errors('pickUpdate')}" th:text="${e}" id="pickUpdateDateError" class="form-text bg-danger rounded">Pick up date cannot be in the
+                        past</small>
+                </div>
+                <br>
+                <div class="col">
+                    <label for="pickUpLocation">Location</label>
+                    <input th:field="*{pickUpLocation}"  th:errorclass="bg-danger" name="pickUpLocation" id="pickUpLocation" type="text" class="form-control" placeholder="Pick-up Location">
+                    <small th:each=" e : ${#fields.errors('pickUpLocation')}" th:text="${e}" id="pickUpLocationError" class="form-text bg-danger rounded">Pick up location must be more than 3 characters</small>
+                </div>
+            </div>
+            <div class="form-row m-5">
+                <div class="col">
+                    <label for="returnDate">Return Date</label>
+                    <input th:field="*{returnDate}" th:errorclass="bg-danger" name="returnDate" id="returnDate" type="date" class="form-control" placeholder="Return date">
+                    <small th:each=" e : ${#fields.errors('returnDate')}" th:text="${e}" id="returnDateError" class="form-text bg-danger rounded">Return date cannot be in the
+                        past</small>
+                </div>
+                <br>
+                <div class="col">
+                    <label for="returnLocation">Location</label>
+                    <input th:field="*{returnLocation}" th:errorclass="bg-danger" name="returnLocation" id="returnLocation" type="text" class="form-control" placeholder="Return Location">
+                    <small  th:each=" e : ${#fields.errors('returnLocation')}" th:text="${e}" id="returnLocationError" class="form-text bg-danger rounded">Return location must be more than 3 characters</small>
+                </div>
+            </div>
+            <div class="col">
+                <label for="additionalExtras">Additional Extras</label>
+                <input th:field="*{additionalExtras}" name="additionalExtras" id="additionalExtras" type="text" class="form-control" placeholder="Do you want something more?">
+            </div>
+<!--            <div class="col"  >-->
+<!--                <label for="carModel">Car</label>-->
+<!--                <select placeholder="Select car" name="carModel" id="carModel" class="custom-select"  style="padding: 15px; width: 100%; margin: 5px 0px 22px; color: grey; background-color: #F1F1F1">-->
+<!--                    <option th:each="c : ${T(project.models.entity.enums.CarModelEnum).values()}"-->
+<!--                           th:text="${c}" th:value="${c}" selected ></option>-->
+
+<!--                </select>-->
+<!--                <small id="carError" class="form-text bg-danger rounded"></small>-->
+<!--            </div>-->
+
+
+            <div class="d-flex justify-content-center mt-4">
+                <button class="btn btn-primary btn-block w-50" style="background-color: #4CAF50" type="submit">View</button>
+            </div>
+        </form>
+    </div>
+</main>
+    <th:block th:include="~{/fragments/footer}"></th:block>
+</body>
+</html>

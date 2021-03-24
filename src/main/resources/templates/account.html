@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <th:block th:include="~{/fragments/nav}"></th:block>
+</nav>
+
+<div class="row">
+    <div th:object="${carforBuy}" class="card col-sm-6 col-md-3  col-lg-2 m-1 p-0">
+        <img th:src="*{imageUrl}" alt=" " style="height: 150px; width: 240px">
+        <h1 th:text="*{brand}" style="height: 70px; font-size: 30px">brand</h1>
+        <h3 th:text="|Price for day: *{pricePerDay} $|"></h3>
+        <p>
+        <div>
+            <a th:href="@{/my/buy/{id}(id = *{id})}">
+                <button>Rent</button>
+            </a>
+
+
+        </div>
+        </p>
+    </div>
+</div>
+
+
+<th:block th:include="~{/fragments/footer}"></th:block>
+
+</body>
+</html>

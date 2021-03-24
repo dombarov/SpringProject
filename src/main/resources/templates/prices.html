@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+<style>
+
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+        margin: 20px;
+        background: white;
+
+    }
+
+    th, td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: white;
+    }
+    tr{
+       background-color: white;
+    }
+    body{
+        background: #F5F1EE;
+    }
+</style>
+<body>
+<nav class="navbar navbar-inverse">
+    <th:block th:include="~{/fragments/nav}"></th:block>
+</nav>
+<h1 style="color: #fdb632; font-weight: 500; line-height: 1.3em; text-align: center">Prices</h1>
+<br>
+<h2 style="text-align: center">Economy class cars</h2>
+
+<table style="margin-left: auto;margin-right: auto">
+<tr style="background-color: antiquewhite">
+    <th >Model</th>
+    <th >Picture</th>
+    <th >2-4 days</th>
+    <th >5-7 days</th>
+    <th >8-14 days</th>
+    <th >15-29 days</th>
+    <th >30+ days</th>
+    <th >Deposit</th>
+</tr>
+    <tr th:each="p : ${car}" th:object="${p} ">
+
+        <th th:text="*{brand}"></th>
+        <th><img th:src="*{imageUrl}" th:action="@{/view/cars/}" style="height: 50px; width: 50px"></th>
+        <th th:text="|*{getPrice().price2_4Days} €|"></th>
+        <th th:text="|*{price.price5_7days} €|"></th>
+        <th th:text="|*{price.price8_14days} €|"></th>
+        <th th:text="|*{price.price15_29days} €|"></th>
+        <th th:text="|*{price.price30Moredays} €|"></th>
+        <th th:text="|*{price.deposit} €|">Deposit</th>
+
+
+    </tr>
+
+    <div sec:authorize="hasRole('admin')" th:replace="">
+
+    </div>
+
+</table>
+<h2 style="text-align: center">Sport class cars</h2>
+<table style="margin-left: auto;margin-right: auto">
+    <tr style="background-color: antiquewhite">
+        <th >Model</th>
+        <th >Picture</th>
+        <th >2-4 days</th>
+        <th >5-7 days</th>
+        <th >8-14 days</th>
+        <th >15-29 days</th>
+        <th >30+ days</th>
+        <th >Deposit</th>
+    </tr>
+    <tr th:each="p : ${cars}" th:object="${p} ">
+
+        <th th:text="*{brand}"></th>
+        <th><img th:src="*{imageUrl}" th:action="@{/view/cars/}" style="height: 50px; width: 50px"></th>
+        <th th:text="|*{getPrice().price2_4Days} €|"></th>
+        <th th:text="|*{price.price5_7days} €|"></th>
+        <th th:text="|*{price.price8_14days} €|"></th>
+        <th th:text="|*{price.price15_29days} €|"></th>
+        <th th:text="|*{price.price30Moredays} €|"></th>
+        <th th:text="|*{price.deposit} €|">Deposit</th>
+
+    </tr>
+
+</table>
+<h2 style="text-align: center">Travell class cars</h2>
+<table style="margin-left: auto;margin-right: auto">
+    <tr style="background-color: antiquewhite">
+        <th >Model</th>
+        <th >Picture</th>
+        <th >2-4 days</th>
+        <th >5-7 days</th>
+        <th >8-14 days</th>
+        <th >15-29 days</th>
+        <th >30+ days</th>
+        <th >Deposit</th>
+    </tr>
+    <tr th:each="p : ${cart}" th:object="${p} ">
+
+        <th th:text="*{brand}"></th>
+        <th><img th:src="*{imageUrl}" th:action="@{/view/cars/}" style="height: 50px; width: 50px"></th>
+        <th th:text="|*{getPrice().price2_4Days} €|"></th>
+        <th th:text="|*{price.price5_7days} €|"></th>
+        <th th:text="|*{price.price8_14days} €|"></th>
+        <th th:text="|*{price.price15_29days} €|"></th>
+        <th th:text="|*{price.price30Moredays} €|"></th>
+        <th th:text="|*{price.deposit} €|">Deposit</th>
+
+    </tr>
+
+</table>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<th:block th:include="~{/fragments/footer}"></th:block>
+</body>
+</html>

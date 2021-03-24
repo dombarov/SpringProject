@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<th:block>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Rent&Sale car</a>
+        </div>
+        <ul class="nav navbar-nav" >
+            <li  ><a href="/">Home</a></li>
+            <li sec:authorize="isAuthenticated()" ><a href="/reservation/add">Reservation</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/view/cars">Car Fleet</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/sale/details">Details</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/transfers/list">Transfers</a></li>
+
+            <li sec:authorize="isAuthenticated()"><a href="/sale/car">Sale your car</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/price/list">Prices</a></li>
+            <li><a href="/contact/view">Contact us</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li sec:authorize="!isAuthenticated()"><a href="/users/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li sec:authorize="!isAuthenticated()"><a href="/users/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li sec:authorize="isAuthenticated()"> <span th:text="|Hello ${#authentication.getName()}!|" style="color: #9D9D9D; padding: 15px; text-align: center"></span></li>
+<!--            <li sec:authorize="isAuthenticated()"><a href="/my/account">Account</a></li>-->
+            <li sec:authorize="isAuthenticated()">
+                <form th:action="@{/logout}" method="POST">
+                    <button type="submit" class="btn-link nav-link" style="padding:
+                     15px; text-align: center" >
+<!--                        <span class="glyphicon glyphicon-log-out" style="padding: 15px">Logout</span>-->
+                        Logout
+                    </button>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+</th:block>
+
+<!--th:if="${session.isEmpty()}"-->
