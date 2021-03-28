@@ -26,4 +26,5 @@ public interface CarService {
     List<CarForBuyViewModel> findAllCarTravell();
 
 
+    void deleteById(String id);
 }

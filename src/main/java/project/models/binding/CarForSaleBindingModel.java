@@ -3,13 +3,15 @@ package project.models.binding;
 public class CarForSaleBindingModel {
     private String brand;
     private String enginetype;
-    private int horsePower;
-    private int year;
+    private String horsePower;
+    private String year;
     private int price;
-    private int mileage;
+    private String mileage;
     private String colour;
     private String transmission;
     private String image;
+    private String telephoneNumber;
+
 
     public CarForSaleBindingModel() {
     }
@@ -34,20 +36,20 @@ public class CarForSaleBindingModel {
         return this;
     }
 
-    public int getHorsePower() {
+    public String getHorsePower() {
         return horsePower;
     }
 
-    public CarForSaleBindingModel setHorsePower(int horsePower) {
+    public CarForSaleBindingModel setHorsePower(String horsePower) {
         this.horsePower = horsePower;
         return this;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public CarForSaleBindingModel setYear(int year) {
+    public CarForSaleBindingModel setYear(String year) {
         this.year = year;
         return this;
     }
@@ -61,11 +63,11 @@ public class CarForSaleBindingModel {
         return this;
     }
 
-    public int getMileage() {
+    public String getMileage() {
         return mileage;
     }
 
-    public CarForSaleBindingModel setMileage(int mileage) {
+    public CarForSaleBindingModel setMileage(String mileage) {
         this.mileage = mileage;
         return this;
     }
@@ -94,6 +96,15 @@ public class CarForSaleBindingModel {
 
     public CarForSaleBindingModel setImage(String image) {
         this.image = image;
+        return this;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public CarForSaleBindingModel setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
         return this;
     }
 }

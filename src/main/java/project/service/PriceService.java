@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface PriceService {
     List<PriceViewModel> findAllPrices();
+
+    void deleteById(String id);
 }

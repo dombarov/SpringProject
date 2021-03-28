@@ -26,10 +26,12 @@
     tr:nth-child(even) {
         background-color: white;
     }
-    tr{
-       background-color: white;
+
+    tr {
+        background-color: white;
     }
-    body{
+
+    body {
         background: #F5F1EE;
     }
 </style>
@@ -42,16 +44,16 @@
 <h2 style="text-align: center">Economy class cars</h2>
 
 <table style="margin-left: auto;margin-right: auto">
-<tr style="background-color: antiquewhite">
-    <th >Model</th>
-    <th >Picture</th>
-    <th >2-4 days</th>
-    <th >5-7 days</th>
-    <th >8-14 days</th>
-    <th >15-29 days</th>
-    <th >30+ days</th>
-    <th >Deposit</th>
-</tr>
+    <tr style="background-color: antiquewhite">
+        <th>Model</th>
+        <th>Picture</th>
+        <th>2-4 days</th>
+        <th>5-7 days</th>
+        <th>8-14 days</th>
+        <th>15-29 days</th>
+        <th>30+ days</th>
+        <th>Deposit</th>
+    </tr>
     <tr th:each="p : ${car}" th:object="${p} ">
 
         <th th:text="*{brand}"></th>
@@ -61,8 +63,14 @@
         <th th:text="|*{price.price8_14days} €|"></th>
         <th th:text="|*{price.price15_29days} €|"></th>
         <th th:text="|*{price.price30Moredays} €|"></th>
-        <th th:text="|*{price.deposit} €|">Deposit</th>
-
+        <th th:text="|*{price.deposit} €|"></th>
+        <div sec:authorize="hasAuthority('ADMIN')">
+            <th>
+                <a th:href="@{/price/delete/{id}(id = *{id})}">
+                    <button>Delete</button>
+                </a>
+            </th>
+        </div>
 
     </tr>
 
@@ -74,14 +82,14 @@
 <h2 style="text-align: center">Sport class cars</h2>
 <table style="margin-left: auto;margin-right: auto">
     <tr style="background-color: antiquewhite">
-        <th >Model</th>
-        <th >Picture</th>
-        <th >2-4 days</th>
-        <th >5-7 days</th>
-        <th >8-14 days</th>
-        <th >15-29 days</th>
-        <th >30+ days</th>
-        <th >Deposit</th>
+        <th>Model</th>
+        <th>Picture</th>
+        <th>2-4 days</th>
+        <th>5-7 days</th>
+        <th>8-14 days</th>
+        <th>15-29 days</th>
+        <th>30+ days</th>
+        <th>Deposit</th>
     </tr>
     <tr th:each="p : ${cars}" th:object="${p} ">
 
@@ -92,7 +100,14 @@
         <th th:text="|*{price.price8_14days} €|"></th>
         <th th:text="|*{price.price15_29days} €|"></th>
         <th th:text="|*{price.price30Moredays} €|"></th>
-        <th th:text="|*{price.deposit} €|">Deposit</th>
+        <th th:text="|*{price.deposit} €|"></th>
+        <div sec:authorize="hasAuthority('ADMIN')">
+            <th>
+                <a th:href="@{/price/delete/{id}(id = *{id})}">
+                    <button>Delete</button>
+                </a>
+            </th>
+        </div>
 
     </tr>
 
@@ -100,14 +115,14 @@
 <h2 style="text-align: center">Travell class cars</h2>
 <table style="margin-left: auto;margin-right: auto">
     <tr style="background-color: antiquewhite">
-        <th >Model</th>
-        <th >Picture</th>
-        <th >2-4 days</th>
-        <th >5-7 days</th>
-        <th >8-14 days</th>
-        <th >15-29 days</th>
-        <th >30+ days</th>
-        <th >Deposit</th>
+        <th>Model</th>
+        <th>Picture</th>
+        <th>2-4 days</th>
+        <th>5-7 days</th>
+        <th>8-14 days</th>
+        <th>15-29 days</th>
+        <th>30+ days</th>
+        <th>Deposit</th>
     </tr>
     <tr th:each="p : ${cart}" th:object="${p} ">
 
@@ -118,7 +133,14 @@
         <th th:text="|*{price.price8_14days} €|"></th>
         <th th:text="|*{price.price15_29days} €|"></th>
         <th th:text="|*{price.price30Moredays} €|"></th>
-        <th th:text="|*{price.deposit} €|">Deposit</th>
+        <th th:text="|*{price.deposit} €|"></th>
+        <div sec:authorize="hasAuthority('ADMIN')">
+            <th>
+                <a th:href="@{/price/delete/{id}(id = *{id})}">
+                    <button>Delete</button>
+                </a>
+            </th>
+        </div>
 
     </tr>
 

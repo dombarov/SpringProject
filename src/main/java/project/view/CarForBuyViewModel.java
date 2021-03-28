@@ -16,6 +16,7 @@ public class CarForBuyViewModel {
     private int fuelConsumption;
     private Price price;
     private BigDecimal pricePerDay;
+    private String telephoneNumber;
 
     public CarForBuyViewModel() {
     }
@@ -116,6 +117,15 @@ public class CarForBuyViewModel {
 
     public CarForBuyViewModel setPricePerDay(BigDecimal pricePerDay) {
         this.pricePerDay = pricePerDay;
+        return this;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public CarForBuyViewModel setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
         return this;
     }
 }

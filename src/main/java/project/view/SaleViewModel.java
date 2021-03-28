@@ -13,6 +13,7 @@ public class SaleViewModel {
     private String transmission;
     private UserEntity user;
     private String image;
+    private String telephoneNumber;
 
     public SaleViewModel() {
     }
@@ -105,6 +106,15 @@ public class SaleViewModel {
 
     public SaleViewModel setImage(String image) {
         this.image = image;
+        return this;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public SaleViewModel setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
         return this;
     }
 }

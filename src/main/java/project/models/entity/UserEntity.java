@@ -20,6 +20,8 @@ public class UserEntity extends BaseEntity {
     public UserEntity() {
     }
 
+
+
     @ManyToMany(fetch = FetchType.EAGER)
     public List<UserRoleEntity> getRoles() {
         return roles;

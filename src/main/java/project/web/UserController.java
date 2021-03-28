@@ -4,29 +4,30 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import project.models.binding.UserLoginBindingModel;
 import project.models.binding.UserRegisterBindingModel;
+import project.models.entity.UserRoleEntity;
+import project.models.entity.enums.UserRole;
 import project.models.service.UserServiceModel;
+import project.service.CarService;
 import project.service.UserService;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/users")
 public class UserController {
     private final ModelMapper modelMapper;
     private final UserService userService;
+    private final CarService carService;
 
-    public UserController(ModelMapper modelMapper, UserService userService) {
+    public UserController(ModelMapper modelMapper, UserService userService, CarService carService) {
         this.modelMapper = modelMapper;
         this.userService = userService;
+        this.carService = carService;
     }
 
     @GetMapping("/register")
@@ -78,9 +79,30 @@ public class UserController {
 
     }
 
-    @GetMapping("/roles")
-    public String role() {
+    @GetMapping("/add")
+    public String findAllRole(Model model) {
+
+        model.addAttribute("names", this.userService.findAllUsername());
+//       model.addAttribute("roles", this.userService.findRole());
         return "admin";
+    }
+
+    @GetMapping("/add/{id}")
+    public String addConfirm(@PathVariable String id){
+        System.out.println();
+        userService.changeRole(id);
+//        userService.deleteByID(id);
+
+        return "redirect:/users/add";
+    }
+
+
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable String id){
+        carService.findById(id);
+        carService.deleteById( id);
+        return "redirect:/view/cars";
     }
 
 

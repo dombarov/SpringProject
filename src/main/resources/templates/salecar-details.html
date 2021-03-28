@@ -105,7 +105,7 @@
                     <div class="d-flex flex-row justify-content-between px-3 pb-4">
 
                         <div class="d-flex flex-column">
-                            <h6 th:text="|Mileage: *{mileage}|" class="mb-0"></h6>
+                            <h6 th:text="|Mileage: *{mileage} km|" class="mb-0"></h6>
                         </div>
                     </div>
 
@@ -121,7 +121,7 @@
                     </div>
 
                     <div class="mx-3 mt-3 mb-2">
-                        <button type="button" class="btn btn-danger btn-block"><small>BUY</small></button>
+                        <button type="button" class="btn btn-danger btn-block"><small th:text="*{telephoneNumber}"></small></button>
                     </div>
 
                 </div>

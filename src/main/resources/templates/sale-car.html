@@ -7,9 +7,11 @@
 </head>
 
 <style>
-    body{
-        background-image: url('/images/deal.jpg');
+    label {
+        display: block;
+
     }
+
 </style>
 
 
@@ -20,52 +22,154 @@
 <!--<div class="image">-->
 <!--    <img style="display: block; width: 100%; height: auto" src="/images/carSale.jpg">-->
 
+
+<!--<div class="container" id="formsale"-->
+<!--     style=" text-align: center; background-color: #000000CC;  font-weight: bold; width: 30%; border: none; left: auto;-->
+<!--               position: absolute; margin: 20px ">-->
+
+<!--    <form th:action="@{/sale/car}" method="POST"-->
+<!--          th:object="${carForSaleBindingModel}">-->
+
+<!--        <h1 class="text-light border-bottom" style="color: white">SELL YOUR CAR HERE</h1>-->
+
+<!--        <label for="brand" style="color: white">Brand</label>-->
+<!--        <input th:field="*{brand}" type="text" id="brand" name="brand" placeholder="Enter car brand">-->
+
+<!--        <label for="enginetype" style="color: white">Engine</label>-->
+<!--        <input th:field="*{enginetype}" type="text" id="enginetype" name="enginetype" placeholder="Engine">-->
+
+<!--        <label for="horsePower" style="color: white">Horse power</label>-->
+<!--        <input th:field="*{horsePower}" type="text" id="horsePower" name="horsePower"-->
+<!--               placeholder="Enter car model">-->
+
+<!--        <label for="year" style="color: white">Year</label>-->
+<!--        <input th:field="*{year}" type="text" id="year" name="year" placeholder="Year ot manufacture">-->
+
+<!--        <label for="price" style="color: white">Price</label>-->
+<!--        <input th:field="*{price}" type="text" id="price" name="price" placeholder="Sale price">-->
+
+
+<!--        <label for="mileage" style="color: white">Mileage</label>-->
+<!--        <input th:field="*{mileage}" type="text" id="mileage" name="mileage"-->
+<!--               placeholder="Kilometers traveled">-->
+
+<!--        <label for="colour" style="color: white">Colour</label>-->
+<!--        <input th:field="*{colour}" type="text" id="colour" name="colour" placeholder="Colour of car">-->
+
+<!--        <label for="image" style="color: white">Image</label>-->
+<!--        <input th:field="*{image}" type="text" id="image" name="image" placeholder="Colour of car">-->
+
+<!--        <label for="transmission" style="color: white">Transmission</label>-->
+<!--        <input th:field="*{transmission}" type="text" id="transmission" name="transmission"-->
+<!--               placeholder="Transmission">-->
+
+<!--        <label for="telephoneNumber" style="color: white">Telephone</label>-->
+<!--        <input th:field="*{telephoneNumber}" type="text" id="telephoneNumber" name="telephoneNumber"-->
+<!--               placeholder="Telephone number">-->
+
+<!--        <input type="submit" style="background-color: green; color: white" value="Submit">-->
+
+<!--        <br>-->
+<!--    </form>-->
 <!--</div>-->
-<div class="container" id="formsale"
-     style=" text-align: center; background-color: #000000CC;  font-weight: bold; width: 30%; border: none; left: auto;
-               position: absolute; margin: 20px ">
+<div class="row" style="right: 0; position: absolute">
+    <div class="col">
+        <img src="/images/sell.jpg">
 
-    <form  th:action="@{/sale/car}" method="POST"
-          th:object="${carForSaleBindingModel}">
-
-        <h1 class="text-light border-bottom" style="color: white">SELL YOUR CAR HERE</h1>
-
-                <label for="brand" style="color: white">Brand</label>
-                <input th:field="*{brand}" type="text" id="brand" name="brand" placeholder="Enter car brand">
-
-                <label for="enginetype" style="color: white">Engine</label>
-                <input th:field="*{enginetype}" type="text" id="enginetype" name="enginetype" placeholder="Engine">
-
-                <label for="horsePower" style="color: white">Horse power</label>
-                <input th:field="*{horsePower}" type="text" id="horsePower" name="horsePower"
-                       placeholder="Enter car model">
-
-                <label for="year" style="color: white">Year</label>
-                <input th:field="*{year}" type="text" id="year" name="year" placeholder="Year ot manufacture">
-
-                <label for="price" style="color: white">Price</label>
-                <input th:field="*{price}" type="text" id="price" name="price" placeholder="Sale price">
-
-
-                    <label for="mileage" style="color: white">Mileage</label>
-                    <input th:field="*{mileage}" type="text" id="mileage" name="mileage"
-                           placeholder="Kilometers traveled">
-
-                    <label for="colour" style="color: white">Colour</label>
-                    <input th:field="*{colour}" type="text" id="colour" name="colour" placeholder="Colour of car">
-
-                    <label for="image" style="color: white">Image</label>
-                    <input th:field="*{image}" type="text" id="image" name="image" placeholder="Colour of car">
-
-                    <label for="transmission" style="color: white">Transmission</label>
-                    <input th:field="*{transmission}" type="text" id="transmission" name="transmission"
-                           placeholder="Transmission">
-
-                    <input type="submit"  style="background-color: green" value="Submit">
-    </form>
-    <br>
-    <br>
+    </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="col">
+        <p>Thinking about selling your car? We want to buy it. Need to sell your car in the Sofia area? Rent&Sale Car is
+            the place for no hassles and fast payment. Simply fill out our online form and we will contact you
+            shortly. </p>
+        <form class="form-inline" th:action="@{/sale/car}" method="POST"
+              th:object="${carForSaleBindingModel}">
+            <div class="form-group">
+                <label for="brand">Brand:</label>
+                <input th:field="*{brand}" type="text" class="form-control" id="brand" placeholder="Enter brand"
+                       name="brand" s>
+            </div>
+            <div class="form-group">
+                <label for="enginetype">Engine:</label>
+                <input th:field="*{enginetype}" type="text" class="form-control" id="enginetype" placeholder="Engine"
+                       name="enginetype">
+            </div>
+            <div class="form-group">
+                <label for="horsePower">Horse power:</label>
+                <input th:field="*{horsePower}" type="text" class="form-control" id="horsePower"
+                       placeholder="Enter password" name="horsePower">
+            </div>
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <input th:field="*{year}" type="text" class="form-control" id="year"
+                       placeholder="Enter year of manifacture"
+                       name="year">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input th:field="*{price}" type="text" class="form-control" id="price" placeholder="Enter price"
+                       name="price">
+            </div>
+            <div class="form-group">
+                <label for="mileage">Mileage:</label>
+                <input th:field="*{mileage}" type="text" class="form-control" id="mileage" placeholder="Enter mileage"
+                       name="mileage">
+            </div>
+            <div class="form-group">
+                <label for="colour">Colour:</label>
+                <input th:field="*{colour}" type="text" class="form-control" id="colour" placeholder="Enter colour"
+                       name="colour">
+            </div>
+            <div class="form-group">
+                <label for="colour">Image:</label>
+                <input th:field="*{image}" type="text" class="form-control" id="image" placeholder="Enter image"
+                       name="image">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="transmission">Transmission:</label>
+                <input th:field="*{transmission}" type="text" class="form-control" id="transmission"
+                       placeholder="Enter transmission"
+                       name="transmission">
+            </div>
+            <div class="form-group">
+                <label for="telephoneNumber">Telephone number:</label>
+                <input th:field="*{telephoneNumber}" type="text" class="form-control" id="telephoneNumber"
+                       placeholder="Enter telephone"
+                       name="telephoneNumber">
+            </div>
+
+            <button type="submit" class="btn btn-default" style="color: white;background: green; width: 150px">Submit
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<br>
+<br>
+
+
 <th:block th:include="~{/fragments/footer}"></th:block>
 </body>
 </html>

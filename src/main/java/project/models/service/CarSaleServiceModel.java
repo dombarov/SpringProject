@@ -5,13 +5,15 @@ public class CarSaleServiceModel {
     private String brand;
 
     private String enginetype;
-    private int horsePower;
-    private int year;
+    private String horsePower;
+    private String year;
     private int price;
-    private int mileage;
+    private String mileage;
     private String colour;
     private String transmission;
     private String image;
+    private String telephoneNumber;
+
 
     public CarSaleServiceModel() {
     }
@@ -36,20 +38,20 @@ public class CarSaleServiceModel {
         return this;
     }
 
-    public int getHorsePower() {
+    public String getHorsePower() {
         return horsePower;
     }
 
-    public CarSaleServiceModel setHorsePower(int horsePower) {
+    public CarSaleServiceModel setHorsePower(String horsePower) {
         this.horsePower = horsePower;
         return this;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public CarSaleServiceModel setYear(int year) {
+    public CarSaleServiceModel setYear(String year) {
         this.year = year;
         return this;
     }
@@ -63,11 +65,11 @@ public class CarSaleServiceModel {
         return this;
     }
 
-    public int getMileage() {
+    public String getMileage() {
         return mileage;
     }
 
-    public CarSaleServiceModel setMileage(int mileage) {
+    public CarSaleServiceModel setMileage(String mileage) {
         this.mileage = mileage;
         return this;
     }
@@ -96,6 +98,15 @@ public class CarSaleServiceModel {
 
     public CarSaleServiceModel setImage(String image) {
         this.image = image;
+        return this;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public CarSaleServiceModel setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
         return this;
     }
 }

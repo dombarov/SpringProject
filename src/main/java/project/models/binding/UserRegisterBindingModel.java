@@ -12,8 +12,11 @@ public class UserRegisterBindingModel {
     private String password;
     private String confirmPassword;
 
+
     public UserRegisterBindingModel() {
     }
+
+
 
     @NotBlank
     @Length(min = 3, message ="Username lenght must be more than 3 characters")

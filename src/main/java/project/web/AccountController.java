@@ -42,7 +42,7 @@ public class AccountController {
 
 
     @GetMapping("/buy/{id}")
-    public String buyById(@PathVariable String id, RedirectAttributes redirectAttributes, Model model) {
+    public String buyById(@PathVariable String id) {
 
         carService.buyById(id);
 

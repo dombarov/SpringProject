@@ -11,9 +11,9 @@
 <nav class="navbar navbar-inverse">
     <th:block th:include="~{/fragments/nav}"></th:block>
 </nav>
+<h1 style="color:#fdb632; font-weight: 500; text-align: center">Rent&Sale Car - cars rental at low prices</h1>
+<!--<h2>Welcome to our website, <span th:text="${#authentication.getName()}"></span></h2>-->
 <div class="container" style="width: 1300px">
-    <h2>Enjoy your trip</h2>
-    <h2>Welcome to our website, <span th:text="${#authentication.getName()}"></span></h2>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -50,11 +50,18 @@
 </div>
 
 
+<br>
+<br>
+
+
+<footer class="text-center text-grey" >
+
+
+    <th:block th:include="~{/fragments/footer}"></th:block>
+</footer>
 
 
 
 
-
-<th:block th:include="~{/fragments/footer}"></th:block>
 </body>
 </html>

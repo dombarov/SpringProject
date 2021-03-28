@@ -6,8 +6,10 @@ public class UserServiceModel {
     private String password;
     private String email;
 
+
     public UserServiceModel() {
     }
+
 
     public String getUsername() {
         return username;

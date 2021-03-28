@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import project.models.binding.CarForSaleBindingModel;
 import project.models.service.CarSaleServiceModel;
 import project.service.CarSaleService;
+import project.service.UserService;
 
 import javax.validation.Valid;
 
@@ -20,11 +21,13 @@ import javax.validation.Valid;
 public class SaleController {
     private final ModelMapper modelMapper;
     private final CarSaleService carSaleService;
+    private final UserService userService;
 
 
-    public SaleController(ModelMapper modelMapper, CarSaleService carSaleService) {
+    public SaleController(ModelMapper modelMapper, CarSaleService carSaleService, UserService userService) {
         this.modelMapper = modelMapper;
         this.carSaleService = carSaleService;
+        this.userService = userService;
     }
 
     @GetMapping("/car")

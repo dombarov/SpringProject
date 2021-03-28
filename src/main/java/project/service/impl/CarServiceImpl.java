@@ -101,7 +101,10 @@ public class CarServiceImpl implements CarService {
                 .map(car -> modelMapper.map(car, CarForBuyViewModel.class)).collect(Collectors.toList());
     }
 
-
+    @Override
+    public void deleteById(String id) {
+        this.carRepository.deleteById(id);
+    }
 
 
 }

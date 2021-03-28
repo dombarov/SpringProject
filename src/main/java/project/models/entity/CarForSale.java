@@ -10,14 +10,15 @@ public class CarForSale extends BaseEntity {
 
     private String brand;
     private String enginetype;
-    private int horsePower;
-    private int year;
+    private String horsePower;
+    private String year;
     private int price;
-    private int mileage;
+    private String mileage;
     private String colour;
     private String transmission;
     private UserEntity user;
     private String image;
+    private String telephoneNumber;
 
     public CarForSale() {
     }
@@ -51,20 +52,20 @@ public class CarForSale extends BaseEntity {
         return this;
     }
 
-    public int getHorsePower() {
+    public String getHorsePower() {
         return horsePower;
     }
 
-    public CarForSale setHorsePower(int horsePower) {
+    public CarForSale setHorsePower(String horsePower) {
         this.horsePower = horsePower;
         return this;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public CarForSale setYear(int year) {
+    public CarForSale setYear(String year) {
         this.year = year;
         return this;
     }
@@ -78,11 +79,11 @@ public class CarForSale extends BaseEntity {
         return this;
     }
 
-    public int getMileage() {
+    public String getMileage() {
         return mileage;
     }
 
-    public CarForSale setMileage(int mileage) {
+    public CarForSale setMileage(String mileage) {
         this.mileage = mileage;
         return this;
     }
@@ -111,6 +112,15 @@ public class CarForSale extends BaseEntity {
 
     public CarForSale setImage(String image) {
         this.image = image;
+        return this;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public CarForSale setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
         return this;
     }
 }

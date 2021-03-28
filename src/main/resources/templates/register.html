@@ -49,6 +49,8 @@
         <small th:each="e : ${#fields.errors('confirmPassword')}" th:text="${e}" id="confirmPasswordError" class="form-text bg-danger rounded" >Confirm password error</small>
         <input th:field="*{confirmPassword}" th:errorclass="bg-danger" type="password" placeholder="Confirm Password" name="confirmPassword" class="form-control" id="confirmPassword" style="background-color: #F1F1F1" required>
         <hr>
+
+
         <button type="submit" class="registerbtn">Register</button>
 
         <p style="color: white">Already have an account? <a href="/users/login">Sign in</a>.</p>

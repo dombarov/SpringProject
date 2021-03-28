@@ -34,4 +34,9 @@ public class PriceServiceImpl implements PriceService {
 //                }).collect(Collectors.toList());
 
     }
+
+    @Override
+    public void deleteById(String id) {
+        this.priceRepository.deleteById(id);
+    }
 }
