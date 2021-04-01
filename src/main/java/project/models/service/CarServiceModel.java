@@ -1,5 +1,8 @@
 package project.models.service;
 
+import project.models.entity.Reservation;
+import project.models.entity.UserEntity;
+
 import java.math.BigDecimal;
 
 public class CarServiceModel extends BaseServiceModel {
@@ -15,6 +18,7 @@ public class CarServiceModel extends BaseServiceModel {
     private int fuelConsumption;
     private BigDecimal getPricePerDay;
     private String criteria;
+
 
 
     public CarServiceModel() {
@@ -119,4 +123,6 @@ public class CarServiceModel extends BaseServiceModel {
         this.getPricePerDay = getPricePerDay;
         return this;
     }
+
+
 }

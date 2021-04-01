@@ -27,4 +27,7 @@ public interface CarService {
 
 
     void deleteById(String id);
+
+
+    CarViewModel fidByDateAndLocation();
 }

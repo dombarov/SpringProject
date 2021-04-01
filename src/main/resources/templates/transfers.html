@@ -3,33 +3,39 @@
 <head>
     <th:block th:include="~{/fragments/head}"></th:block>
 </head>
+<style>
+
+</style>
+
+<body style="background-color: darkseagreen">
 
 
-<body>
 <nav class="navbar navbar-inverse">
     <th:block th:include="~{/fragments/nav}"></th:block>
 </nav>
 
 
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for route.." title="Type in a route">
-<h1  style="text-align: center">Transfers</h1>
+<h1  style="text-align: center; color: yellow">Transfers</h1>
 <br>
-<p style="width: 70%; margin: auto">Rent&Sale Car organizes individual transport services and transfers from all airports, hotels and resorts in Bulgaria. Our professional drivers will meet you, take care of your luggage, and you will travel comfortably and safely. Make your trip unique with our rental car.</p>
-<table id="myTable">
-    <caption>Transfers</caption>
-    <tr  >
+<p style="width: 65%; margin: auto; color: white">Rent&Sale Car organizes individual transport services and transfers from all airports, hotels and resorts in Bulgaria. Our professional drivers will meet you, take care of your luggage, and you will travel comfortably and safely. Make your trip unique with our rental car.</p>
+<br>
+<table  class="container">
+<!--    <caption>Transfers</caption>-->
+    <tr style="background-color: yellow" >
         <th >Route</th>
         <th>Car (5+1 seats)</th>
         <th>Minivan (6+1 seats)</th>
         <th>Minibus (8+1 seats)</th>
     </tr>
-    <tr th:each="t : ${transfers}" th:object="${t}">
+    <tr th:each="t : ${transfers}" th:object="${t}" style="background-color: white">
         <td th:text="*{route} "></td>
         <td th:text="|*{carWith5seats} €|"></td>
         <td th:text="|*{minivanWith7seats} €|"></td>
         <td th:text="|*{minibusWith9seats} €|"></td>
 
     </tr>
+
 </table>
 
 <script>
@@ -53,11 +59,11 @@
     }
 </script>
 
-<footer class="text-center text-grey" style="background-color: rgb(40, 40, 40); margin-top: 2%; color: #9D9D9D">
+<!--<footer class="text-center text-grey" style="background-color: rgb(40, 40, 40); margin-top: 2%; color: #9D9D9D">-->
 
 
     <th:block th:include="~{/fragments/footer}"></th:block>
-</footer>
+
 </body>
 
 </html>

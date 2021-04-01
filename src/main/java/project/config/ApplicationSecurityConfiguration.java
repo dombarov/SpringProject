@@ -25,9 +25,11 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/index","/", "/users/register", "/users/login").permitAll()
+                .antMatchers("/users/add").hasAuthority("ADMIN")
                 .antMatchers("/delete/**").hasAuthority("ADMIN")
 //                .antMatchers("/**").authenticated()
                 .and()

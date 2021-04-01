@@ -9,13 +9,13 @@
             <a class="navbar-brand" href="/">Rent&Sale car</a>
         </div>
         <ul class="nav navbar-nav" >
-            <li  ><a href="/">Home</a></li>
+<!--            <li  ><a href="/">Home</a></li>-->
             <li sec:authorize="isAuthenticated()" ><a href="/reservation/add">Reservation</a></li>
             <li sec:authorize="isAuthenticated()"><a href="/view/cars">Car Fleet</a></li>
 <!--            <li sec:authorize="isAuthenticated()"><a href="/sale/details">Details</a></li>-->
             <li sec:authorize="isAuthenticated()"><a href="/transfers/list">Transfers</a></li>
 
-            <li sec:authorize="isAuthenticated()"><a href="/sale/car">Sale your car</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/sale/car">Sell your car</a></li>
             <li sec:authorize="isAuthenticated()"><a href="/price/list">Prices</a></li>
             <li sec:authorize="isAuthenticated()"><a href="/contact/view">Contact us</a></li>
         </ul>
@@ -33,7 +33,7 @@
             <li sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" method="POST">
                     <button type="submit" class="btn-link nav-link" style="padding:
-                     15px; float: right" >
+                     15px; float: right; margin-top: -3px;" >
 <!--                        <span class="glyphicon glyphicon-log-out" style="padding: 15px">Logout</span>-->
                         Logout
                     </button>

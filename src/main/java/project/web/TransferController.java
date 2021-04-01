@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import project.service.TransferService;
 
 @Controller
-@RequestMapping("transfers")
+@RequestMapping("/transfers")
 public class TransferController {
     private final TransferService transferService;
 
@@ -15,7 +15,7 @@ public class TransferController {
         this.transferService = transferService;
     }
 
-    @GetMapping("list")
+    @GetMapping("/list")
     public ModelAndView listtransfers(){
         ModelAndView modelAndView = new ModelAndView();
 

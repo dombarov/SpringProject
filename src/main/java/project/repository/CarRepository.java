@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import project.models.entity.Car;
+import project.models.entity.Reservation;
 import project.view.CarForBuyViewModel;
 
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ public interface CarRepository extends JpaRepository<Car, String> {
 
     @Query("select SUM(s.pricePerDay) from Car s")
     BigDecimal findTotalCarSum();
+
 
 
 

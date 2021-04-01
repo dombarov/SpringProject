@@ -12,6 +12,7 @@ import project.models.entity.UserEntity;
 import project.repository.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -26,8 +27,9 @@ public class RentaCarUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
        UserEntity user = userRepository.findByUsername(username)
-               .orElseThrow(() -> new UsernameNotFoundException("User with username " + username  +" was not found"));
+               .orElseThrow(() -> new UsernameNotFoundException(username));
        return mapToUserDetails(user);
     }
 

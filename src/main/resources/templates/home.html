@@ -25,15 +25,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="/images/cool3.jpg" alt="Los Angeles" style="width:100%;">
+                <img th:src="@{/images/{image}(image=${firstImg})}" alt="First slide" style="width:100%;">
             </div>
 
             <div class="item">
-                <img src="/images/cool1.jpg" alt="Chicago" style="width:100%;">
+                <img  th:src="@{/images/{image}(image=${secondImg})}"  alt="Second slide" style="width:100%;">
             </div>
 
             <div class="item">
-                <img src="/images/cool2.jpg" alt="New york" style="width:100%;">
+                <img th:src="@{/images/{image}(image=${thirdImg})}"  alt="Third slide" style="width:100%;">
             </div>
         </div>
 
@@ -54,14 +54,11 @@
 <br>
 
 
-<footer class="text-center text-grey" >
-
-
-    <th:block th:include="~{/fragments/footer}"></th:block>
-</footer>
 
 
 
+
+<th:block th:include="~{/fragments/footer}"></th:block>
 
 </body>
 </html>

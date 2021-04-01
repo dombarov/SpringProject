@@ -22,8 +22,10 @@ public interface UserService {
 
     List<UserViedModel> findAllUsername();
 
-    void changeRole(String id);
+    void addAdminROle(String id);
 
 
     void deleteByID(String id);
+
+    void removeAdmin(String id);
 }

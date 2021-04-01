@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import project.models.binding.UserRegisterBindingModel;
-import project.models.entity.UserRoleEntity;
-import project.models.entity.enums.UserRole;
 import project.models.service.UserServiceModel;
 import project.service.CarService;
 import project.service.UserService;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 @RequestMapping("/users")
@@ -62,7 +59,10 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String getLogin(Model model) {
+    public String getLogin() {
+
+//    throw new NullPointerException();
+
         return "login";
     }
 
@@ -83,14 +83,26 @@ public class UserController {
     public String findAllRole(Model model) {
 
         model.addAttribute("names", this.userService.findAllUsername());
+
 //       model.addAttribute("roles", this.userService.findRole());
         return "admin";
     }
 
-    @GetMapping("/add/{id}")
+    @GetMapping("/add/admin/{id}")
     public String addConfirm(@PathVariable String id){
         System.out.println();
-        userService.changeRole(id);
+        userService.addAdminROle(id);
+//        userService.deleteByID(id);
+
+        return "redirect:/users/add";
+    }
+
+
+
+    @GetMapping("/remove/admin/{id}")
+    public String removeAdmin(@PathVariable String id){
+        System.out.println();
+        userService.removeAdmin(id);
 //        userService.deleteByID(id);
 
         return "redirect:/users/add";
@@ -104,6 +116,7 @@ public class UserController {
         carService.deleteById( id);
         return "redirect:/view/cars";
     }
+
 
 
 }

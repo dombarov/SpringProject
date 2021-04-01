@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import project.models.entity.Car;
 import project.models.entity.Price;
+import project.models.entity.Reservation;
 import project.repository.CarRepository;
 
 import java.math.BigDecimal;
@@ -28,13 +29,14 @@ public class InitCarsSpecific implements CommandLineRunner {
             price.setPrice30Moredays(BigDecimal.valueOf(19));
             price.setDeposit(BigDecimal.valueOf(200));
 
-
             Car car1 = new Car();
             car1.setImageUrl("https://content.lkq.cz/File//AKXX/988F0025-E16B-2CB4-B85F-FAE4DA7A9EA1_L.JPG")
             .setBrand("Honda Accord")
             .setCategory("Sedan")
             .setHorsePower(140)
             .setYear(2010).setEuroStandard(5).setSeats(5).setFuelConsumption(8).setPrice(price).setPricePerDay(BigDecimal.valueOf(30)).setCriteria("economy");
+
+
 
             Price price1 = new Price();
             price1.setPrice2_4Days(BigDecimal.valueOf(23));

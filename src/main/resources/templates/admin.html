@@ -76,14 +76,14 @@
         <th th:text="*{username}"></th>
         <th>
             <a th:if="${n.getRoles().size()==1}"
-                    th:href="@{/users/add/{id}(id=*{id})}">
+                    th:href="@{/users/add/admin/{id}(id=*{id})}">
                 <button type="button">
                     Make Admin</button>
             </a>
         </th>
         <th>
             <a th:if="${n.getRoles().size()==2}"
-               th:href="@{/users/add/{id}(id=*{id})}">
+               th:href="@{/users/remove/admin/{id}(id=*{id})}">
                 <button type="button">
                     Make user</button>
             </a>
@@ -94,6 +94,8 @@
 
 </table>
 
+
+<th:block th:include="~{/fragments/footer}"></th:block>
 
 </body>
 

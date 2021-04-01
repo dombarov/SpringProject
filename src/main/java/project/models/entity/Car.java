@@ -20,6 +20,7 @@ public class Car extends BaseEntity {
     private String criteria;
 
 
+
     public Car() {
     }
 
@@ -135,5 +136,7 @@ public class Car extends BaseEntity {
         this.criteria = criteria;
         return this;
     }
+
+
 }
 

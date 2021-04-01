@@ -1,0 +1,25 @@
+logging:
+  level:
+    blog: WARN
+    org: WARN
+    org.hibernate.SQL: DEBUG
+server:
+  port: 8008
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: 1234
+    url: jdbc:mysql://localhost:3306/myproject_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+carousel:
+  images: dodge.jpg, carousel1.jpg, carousel2.jpg, cool3.jpg, cool1.jpg, cool2.jpg
+  refresh-cron: "0 */1 * * * *"

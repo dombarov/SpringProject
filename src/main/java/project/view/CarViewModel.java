@@ -1,6 +1,8 @@
 package project.view;
 
 import project.models.entity.Price;
+import project.models.entity.Reservation;
+import project.models.entity.UserEntity;
 
 import java.math.BigDecimal;
 
@@ -17,6 +19,8 @@ public class CarViewModel {
     private Price price;
     private BigDecimal pricePerDay;
     private String criteria;
+    private UserEntity userEntity;
+    private Reservation reservation;
 
 
     public CarViewModel() {
@@ -118,6 +122,24 @@ public class CarViewModel {
 
     public CarViewModel setCriteria(String criteria) {
         this.criteria = criteria;
+        return this;
+    }
+
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
+
+    public CarViewModel setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
+        return this;
+    }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public CarViewModel setReservation(Reservation reservation) {
+        this.reservation = reservation;
         return this;
     }
 }

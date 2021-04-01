@@ -47,7 +47,7 @@ public class ReservationController {
         this.reservationService.addReservation(this.modelMapper.map(reservationAddBindingModel, ReservationAddServiceModel.class));
         return "redirect:/view/cars";
 
-
     }
+
 
 }

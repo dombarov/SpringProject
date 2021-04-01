@@ -1,5 +1,8 @@
 package project.models.binding;
 
+import project.models.entity.Reservation;
+import project.models.entity.UserEntity;
+
 import java.math.BigDecimal;
 
 public class CarBindingModel {
@@ -14,6 +17,7 @@ public class CarBindingModel {
     private int fuelConsumption;
     private BigDecimal getPricePerDay;
     private String criteria;
+
 
 
     public CarBindingModel() {
@@ -108,4 +112,6 @@ public class CarBindingModel {
         this.getPricePerDay = getPricePerDay;
         return this;
     }
+
+
 }

@@ -106,5 +106,10 @@ public class CarServiceImpl implements CarService {
         this.carRepository.deleteById(id);
     }
 
+    @Override
+    public CarViewModel fidByDateAndLocation() {
+        return null;
+    }
+
 
 }

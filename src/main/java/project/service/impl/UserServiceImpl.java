@@ -110,13 +110,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void changeRole(String id) {
+    public void addAdminROle(String id) {
         UserEntity user = this.userRepository.findById(id).orElse(null);
         System.out.println();
         assert user != null;
         List<UserRoleEntity> roles = user.getRoles();
 
-        if (roles.size() ==1 ) {
+        if (roles.size() == 1) {
             UserRoleEntity adminRole = roleRepository.findByRole(UserRole.ADMIN);
             UserRoleEntity userRole = roleRepository.findByRole(UserRole.USER);
 
@@ -130,6 +130,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteByID(String id) {
         this.userRepository.deleteById(id);
+    }
+
+    @Override
+    public void removeAdmin(String id) {
+        UserEntity user = this.userRepository.findById(id).orElse(null);
+        System.out.println();
+        assert user != null;
+        List<UserRoleEntity> roles = user.getRoles();
+
+        if (roles.size() == 2) {
+            UserRoleEntity userRole = roleRepository.findByRole(UserRole.USER);
+
+            user.setRoles(List.of(userRole));
+            userRepository.save(user);
+        }
+
     }
 
 
