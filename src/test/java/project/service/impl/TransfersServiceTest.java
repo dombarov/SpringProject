@@ -36,15 +36,15 @@ public class TransfersServiceTest {
         this.transferService = new TransferServiceImpl(transferRepository, modelMapper);
     }
 
-//    @Test
-//    void testAllTransfers(){
-//        when(transferService.findAll()).thenReturn(List.of(transferViewModel));
-//
-//        List<TransferViewModel> trView = transferService.findAll();
-//        TransferViewModel actualTr = trView.get(0);
-//
-//        Assertions.assertEquals(transferViewModel.getCarWith5seats(), actualTr.getCarWith5seats());
-//        Assertions.assertEquals(transferViewModel.getMinibusWith9seats(), actualTr.getMinibusWith9seats());
-//    }
+   @Test
+    void testAllTransfers(){
+        when(transferService.findAll()).thenReturn(List.of(transferViewModel));
+
+        List<TransferViewModel> trView = transferService.findAll();
+        TransferViewModel actualTr = trView.get(0);
+
+        Assertions.assertEquals(transferViewModel.getCarWith5seats(), actualTr.getCarWith5seats());
+        Assertions.assertEquals(transferViewModel.getMinibusWith9seats(), actualTr.getMinibusWith9seats());
+    }
 
 }
